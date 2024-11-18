@@ -1,6 +1,6 @@
 # Vendor Management API
 
-Build for PT Sinergi Informatika Semen Indonesia (SISI) by **[Achmad Fadillah](https://marjos.vercel.app)**.
+Build for PT Sinergi Informatika Semen Indonesia (SISI) by **[Marcel Joshua](https://marjos.vercel.app)**.
 
 ## `🏗️ How to build`
 
