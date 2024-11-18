@@ -8,18 +8,12 @@ import lombok.Data;
 @Builder
 public class VendorUpdateRequest {
 
-  @Size(
-    min = 3,
-    max = 255,
-    message = "Name must be {min}-{max} characters long"
-  )
+  @Size(min = 3, max = 255,
+      message = "Name must be {min}-{max} characters long")
   private String name;
 
-  @Size(
-    min = 3,
-    max = 255,
-    message = "Location must be {min}-{max} characters long"
-  )
+  @Size(min = 3, max = 255,
+      message = "Location must be {min}-{max} characters long")
   private String location;
 
 }

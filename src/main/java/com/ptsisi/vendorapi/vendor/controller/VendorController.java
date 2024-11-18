@@ -75,8 +75,7 @@ public class VendorController {
       @RequestParam(value = "location", required = false) String location,
       @RequestParam(value = "active-only", defaultValue = "true") boolean activeOnly,
       @RequestParam(value = "page", defaultValue = "0") int page,
-      @RequestParam(value = "size", defaultValue = "10") int size
-  ) {
+      @RequestParam(value = "size", defaultValue = "10") int size) {
     log.info("Fetching vendors with page: '{}' and size: '{}'", page, size);
 
     VendorSearchRequest request = VendorSearchRequest.of(name, location, activeOnly, page, size);
@@ -91,7 +90,8 @@ public class VendorController {
     consumes = MediaType.APPLICATION_JSON_VALUE,
     produces = MediaType.APPLICATION_JSON_VALUE
   )
-  public ResponseEntity<ApiResponse<Vendor>> updateVendor(@PathVariable UUID id, @RequestBody VendorUpdateRequest request) {
+  public ResponseEntity<ApiResponse<Vendor>> updateVendor(@PathVariable UUID id,
+      @RequestBody VendorUpdateRequest request) {
     log.info("Updating vendor with id: '{}'", id);
 
     var result = vendorService.getVendorById(id);

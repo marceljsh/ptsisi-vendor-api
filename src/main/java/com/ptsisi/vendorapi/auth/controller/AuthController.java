@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +30,6 @@ public class AuthController {
   private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 
   private final AuthService authService;
-  private final AuthenticationManager authManager;
 
   @PostMapping(
     value = "/sign-up",
@@ -44,9 +42,9 @@ public class AuthController {
     User user = authService.register(request);
     AuthResponse response = AuthResponse.builder()
         .token(authService.authenticate(LoginRequest.builder()
-          .email(user.getEmail())
-          .password(request.getPassword())
-          .build()))
+            .email(user.getEmail())
+            .password(request.getPassword())
+            .build()))
         .build();
 
     return ResponseEntity
@@ -70,20 +68,20 @@ public class AuthController {
     return ResponseEntity.ok(ApiResponse.success(response));
   }
 
-//  @PostMapping(value = "/sign-out")
-//  public ResponseEntity<Void> signOut(HttpServletRequest request) {
-//    log.info("Logging out user");
-//
-//    String token = request.getHeader("Authorization").substring(7);
-//    authService.logout(token);
-//
-//    HttpSession session = request.getSession(false);
-//    if (session != null) {
-//      session.invalidate();
-//    }
-//    SecurityContextHolder.clearContext();
-//
-//    return ResponseEntity.ok().build();
-//  }
+  @PostMapping(value = "/sign-out")
+  public ResponseEntity<Void> signOut(HttpServletRequest request) {
+    log.info("Logging out user");
+
+    String token = request.getHeader("Authorization").substring(7);
+    authService.logout(token);
+
+    HttpSession session = request.getSession(false);
+    if (session != null) {
+      session.invalidate();
+    }
+    SecurityContextHolder.clearContext();
+
+    return ResponseEntity.ok().build();
+  }
 
 }

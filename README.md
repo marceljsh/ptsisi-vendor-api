@@ -12,6 +12,9 @@ You can use one of these accounts to login:
 
 Or you can register a new account, see [here](#endpoint-auth).
 
+> [!CAUTION]
+> Please configure `.env` file before you start.
+
 
 ## `📦 Endpoints`
 

@@ -1,6 +1,5 @@
 package com.ptsisi.vendorapi.auth.service;
 
-import com.ptsisi.vendorapi.auth.dto.AuthResponse;
 import com.ptsisi.vendorapi.auth.dto.LoginRequest;
 import com.ptsisi.vendorapi.auth.dto.RegisterRequest;
 import com.ptsisi.vendorapi.common.util.Constants;
@@ -58,9 +57,8 @@ public class AuthServiceImpl implements AuthService {
     validatePassword(request.getPassword(), user.getPassword());
 
     UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-      request.getEmail(),
-      request.getPassword()
-    );
+        request.getEmail(),
+        request.getPassword());
     authManager.authenticate(authenticationToken);
 
     return jwtService.generateToken(user);

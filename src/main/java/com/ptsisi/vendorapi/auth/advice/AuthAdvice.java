@@ -15,7 +15,6 @@ public class AuthAdvice {
 
   private static final Logger log = LoggerFactory.getLogger(AuthAdvice.class);
 
-
   @ExceptionHandler(BadCredentialsException.class)
   public ResponseEntity<ApiResponse<ErrorDto>> handleBadCredentialsException(BadCredentialsException e) {
     log.error("Bad credentials exception: {}", e.getMessage());

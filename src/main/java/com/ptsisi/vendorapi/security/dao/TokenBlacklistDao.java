@@ -16,7 +16,7 @@ public class TokenBlacklistDao {
   @Transactional(readOnly = true)
   public boolean isTokenBlacklisted(String token) {
     Integer count = template.queryForObject(Constants.QUERY_IS_TOKEN_BLACKLISTED,
-        new Object[]{token}, Integer.class);
+        new Object[] { token }, Integer.class);
     return count != null && count > 0;
   }
 

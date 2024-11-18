@@ -11,10 +11,15 @@ import java.util.UUID;
 public interface VendorService {
 
   boolean existsById(UUID id);
+
   Vendor createVendor(Vendor vendor);
+
   Optional<Vendor> getVendorById(UUID id);
+
   Page<Vendor> getVendorList(VendorSearchRequest request);
+
   Vendor updateVendor(UUID id, VendorUpdateRequest request);
+
   UUID deleteVendor(UUID id);
 
 }

@@ -7,7 +7,9 @@ import com.ptsisi.vendorapi.user.model.User;
 public interface AuthService {
 
   User register(RegisterRequest request);
+
   String authenticate(LoginRequest request);
+
   void logout(String token);
 
 }

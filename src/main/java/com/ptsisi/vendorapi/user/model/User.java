@@ -17,9 +17,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Set;
 
-@Entity @Table(name = "tbl_user")
-@Getter @Setter @Builder
-@NoArgsConstructor @AllArgsConstructor
+@Entity
+@Table(name = "tbl_user")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity implements UserDetails {
 
   @Column(unique = true, nullable = false, updatable = false)

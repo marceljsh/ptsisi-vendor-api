@@ -11,15 +11,15 @@ import lombok.Data;
 public class RegisterRequest {
 
   @Size(min = 3, max = 255,
-    message = "Email must be {min}-{max} characters long")
+      message = "Email must be {min}-{max} characters long")
   @Pattern(regexp = Regexp.EMAIL,
-    message = "Email must be a valid email address")
+      message = "Email must be a valid email address")
   private String email;
 
   @Size(min = 8, max = 255,
-    message = "Password must be {min}-{max} characters long")
+      message = "Password must be {min}-{max} characters long")
   @Pattern(regexp = Regexp.RAW_PASSWORD,
-    message = "Password must contain only letters, numbers, and special characters")
+      message = "Password must contain only letters, numbers, and special characters")
   private String password;
 
 }

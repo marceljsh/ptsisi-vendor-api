@@ -10,9 +10,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity @Table(name = "tbl_vendor")
-@Getter @Setter @Builder
-@NoArgsConstructor @AllArgsConstructor
+@Entity
+@Table(name = "tbl_vendor")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vendor extends BaseEntity {
 
   @Column(nullable = false, unique = true)

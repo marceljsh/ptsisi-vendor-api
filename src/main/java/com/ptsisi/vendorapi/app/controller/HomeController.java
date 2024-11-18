@@ -11,7 +11,7 @@ import java.io.IOException;
 @RestController
 public class HomeController {
 
-  private static final String DOCUMENTATION_URL = "https://github.com/marceljsh/onepiece-spring/tree/main?tab=readme-ov-file#endpoints";
+  private static final String DOCUMENTATION_URL = "https://github.com/marceljsh/ptsisi-vendor-api?tab=readme-ov-file#auth";
 
   /**
    * Redirects to the documentation.
@@ -19,7 +19,7 @@ public class HomeController {
    * @param response the HTTP response
    * @throws IOException if an I/O error occurs
    */
-  @GetMapping({"/", "/api/v1", "/api/v1/docs"})
+  @GetMapping({ "/", "/api/v1", "/api/v1/docs" })
   @ResponseStatus(HttpStatus.TEMPORARY_REDIRECT)
   public void root(HttpServletResponse response) throws IOException {
     response.sendRedirect(DOCUMENTATION_URL);

@@ -2,17 +2,18 @@ package com.ptsisi.vendorapi.common.util;
 
 public class Constants {
 
-  private Constants() {}
+  private Constants() {
+  }
 
   public static final String QUERY_IS_TOKEN_BLACKLISTED = """
-      SELECT COUNT(*)
-      FROM tbl_token_blacklist
-      WHERE token = ?
-   """;
+         SELECT COUNT(*)
+         FROM tbl_token_blacklist
+         WHERE token = ?
+      """;
   public static final String QUERY_BLACKLIST_TOKEN = """
-      INSERT INTO tbl_token_blacklist (token)
-      VALUES (?)
-   """;
+         INSERT INTO tbl_token_blacklist (token)
+         VALUES (?)
+      """;
 
   public static final String ERR_DEFAULT = "something went wrong";
   public static final String ERR_AUTH_DEFAULT = "authentication failed";

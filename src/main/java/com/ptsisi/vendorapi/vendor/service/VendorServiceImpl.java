@@ -18,7 +18,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -50,14 +54,14 @@ public class VendorServiceImpl implements VendorService {
 
       if (Objects.nonNull(request.getName())) {
         predicates.add(cb.like(
-          cb.lower(root.get("name")),
-          "%" + request.getName().toLowerCase() + "%"));
+            cb.lower(root.get("name")),
+            "%" + request.getName().toLowerCase() + "%"));
       }
 
       if (Objects.nonNull(request.getLocation())) {
         predicates.add(cb.like(
-          cb.lower(root.get("location")),
-          "%" + request.getLocation().toLowerCase() + "%"));
+            cb.lower(root.get("location")),
+            "%" + request.getLocation().toLowerCase() + "%"));
       }
 
       if (request.isActiveOnly()) {
