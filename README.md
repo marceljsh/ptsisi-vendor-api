@@ -2,6 +2,50 @@
 
 Build for PT Sinergi Informatika Semen Indonesia (SISI) by **[Achmad Fadillah](https://marjos.vercel.app)**.
 
+## `🏗️ How to build`
+
+### `🐳 Using Docker`
+
+Run the following command to build the Docker image:
+
+```bash
+docker build -t vendorapi .
+```
+
+Step 4: Run the Docker Container
+
+After successfully building the Docker image, you can run it using:
+
+```bash
+docker run -p 8080:8080 vendorapi
+```
+
+### `🛠️ Using Makefile`
+
+Use the following commands to build or run the project:
+- To build the project:
+```bash
+make build
+```
+
+- To run the project locally:
+
+```bash
+make run
+```
+
+- To build the Docker image:
+
+```bash
+make docker-build
+```
+
+- To run the Docker container:
+
+```bash
+make docker-run
+```
+
 ## `🚀 How to use`
 
 You can use one of these accounts to login:
